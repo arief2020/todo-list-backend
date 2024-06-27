@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "nodemon src/index",
+    "dev": "nodemon src/bin/www",
     "dbCreate:dev": "sequelize-cli db:create",
     "migrate:dev": "sequelize-cli db:migrate"
   },
@@ -16,6 +16,7 @@
     "nodemon": "^3.1.4"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "morgan": "^1.10.0",
