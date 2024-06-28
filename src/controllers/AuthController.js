@@ -3,11 +3,11 @@ const AuthService = require('../services/AuthService')
 class AuthController {
   static async login(req, res, next) {
     try {
-		const response = await AuthService.login(req.body, res)
-    return res.status(200).json(response)
+      const response = await AuthService.login(req.body, res)
+      return res.status(200).json(response)
     } catch (error) {
-		next(error)
-	}
+      next(error)
+    }
   }
 
   static async register(req, res, next) {

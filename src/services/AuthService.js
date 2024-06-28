@@ -16,7 +16,7 @@ class AuthService {
         const errors = new Error('Email is not registered')
         errors.name = 'ErrorNotFound'
         throw errors
-      } 
+      }
 
       const comparePass = comparePassword(password, haveEmail.password)
       if (!comparePass) {
@@ -26,11 +26,11 @@ class AuthService {
       }
 
       const token = jwtSign({ id: haveEmail.id })
-       res.cookie('accessToken', token, {
-         httpOnly: true,
-         maxAge: 24 * 60 * 60 * 1000, // 1 day
-       })
-       return { message: 'success login' }
+      res.cookie('accessToken', token, {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000, // 1 day
+      })
+      return { message: 'success login' }
     } catch (error) {
       console.log(error)
       throw error
