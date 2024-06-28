@@ -1,28 +1,16 @@
-// const express = require("express");
-// const dotenv = require("dotenv");
+const express = require('express')
+const morgan = require('morgan')
+const router = require('./router/index')
+const errorHandler = require('./middleware/errorHandler')
+const cors = require('cors')
 
-// dotenv.config()
-// const app = express();
-// const port = process.env.APP_PORT || 3000;
+const app = express()
 
-// app.get("/", (req, res) => {
-//   res.send("Hello Express!");
-// });
+app.use(morgan('tiny'))
+app.use(cors({ origin: 'http://localhost:3000' }))
+app.use(express.json())
 
-// app.listen(port, () => {
-//   console.log(`Server is running at http://localhost:${port}`);
-// });
+app.use(router)
+app.use(errorHandler)
 
-const express = require("express");
-const morgan = require("morgan");
-const router = require("./router/index");
-const errorHandler = require("./middleware/errorHandler");
-
-const app = express();
-
-app.use(morgan("tiny"));
-app.use(express.json());
-app.use(router);
-app.use(errorHandler);
-
-module.exports = app;
+module.exports = app

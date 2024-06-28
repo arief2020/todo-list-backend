@@ -1,9 +1,12 @@
-const express = require("express");
+const express = require('express')
 
-const router = express.Router();
+const router = express.Router()
 
-router.use("/api/hello", (req, res) =>{
-	res.status(200).json({message: "Hello World"});
-});
+const authRouter = require('./auth')
 
-module.exports = router;
+router.use('/api/hello', (req, res) => {
+  res.status(200).json({ message: 'Hello World' })
+})
+router.use('/api/auth', authRouter)
+
+module.exports = router
