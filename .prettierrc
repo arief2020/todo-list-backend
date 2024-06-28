@@ -5,6 +5,5 @@
   "useTabs": false,
   "semi": false,
   "singleQuote": true,
-  "arrowParens": "always",
-  "space-before-function-paren": ["warning", "always"]
+  "arrowParens": "always"
 }

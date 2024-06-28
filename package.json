@@ -13,7 +13,8 @@
     "lint:fix": "eslint \"src/**/*.js\" --fix",
     "lint": "eslint \"src/**/*.js\"",
     "prepare:husky": "husky install",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "prepare": "husky"
   },
   "husky": {
     "hooks": {

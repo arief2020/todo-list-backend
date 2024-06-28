@@ -4,7 +4,7 @@ dotenv.config()
 
 const sign = (dataObj, expireTime = '1d') => {
   return jwt.sign(dataObj, process.env.JWT_AUTH_SECRET, {
-    expiresIn: expireTime
+    expiresIn: expireTime,
   })
 }
 
@@ -27,5 +27,5 @@ const decode = (token) => {
 module.exports = {
   sign,
   verify,
-  decode
+  decode,
 }

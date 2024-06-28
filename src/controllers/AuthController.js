@@ -1,17 +1,9 @@
 class AuthController {
-  static async login (req, res, next) {
-    
-  }
+  static async login(req, res, next) {}
 
-  static async register (req, res, next) {
-    try {
+  static async register(req, res, next) {}
 
-    } catch (error) {
-
-    }
-  }
-
-  static async logout (req, res, next) {}
+  static async logout(req, res, next) {}
 }
 
 module.exports = AuthController
