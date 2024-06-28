@@ -1,10 +1,6 @@
 class AuthController {
   static async login (req, res, next) {
-    try {
-
-    } catch (error) {
-
-    }
+    
   }
 
   static async register (req, res, next) {
