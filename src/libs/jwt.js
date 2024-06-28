@@ -2,13 +2,13 @@ const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 dotenv.config()
 
-const sign = (dataObj, expireTime = '1d') => {
+const jwtSign = (dataObj, expireTime = '1d') => {
   return jwt.sign(dataObj, process.env.JWT_AUTH_SECRET, {
     expiresIn: expireTime,
   })
 }
 
-const verify = (token) => {
+const jwtVerify = (token) => {
   try {
     return jwt.verify(token, process.env.JWT_AUTH_SECRET)
   } catch (error) {
@@ -16,7 +16,7 @@ const verify = (token) => {
   }
 }
 
-const decode = (token) => {
+const jwtDecode = (token) => {
   try {
     return jwt.decode(token)
   } catch (error) {
@@ -25,7 +25,7 @@ const decode = (token) => {
 }
 
 module.exports = {
-  sign,
-  verify,
-  decode,
+  jwtSign,
+  jwtVerify,
+  jwtDecode,
 }
